@@ -20,7 +20,7 @@ import com.example.androiddevchallenge.ui.theme.accentBlue
 import com.example.androiddevchallenge.ui.theme.typography
 
 @Composable
-fun Header() {
+fun Header(isMain: Boolean = true) {
     Card(
         modifier = Modifier.fillMaxWidth(),
         elevation = 24.dp,
@@ -47,34 +47,36 @@ fun Header() {
                     fontWeight = FontWeight.Bold
                 )
             }
-            Row(
-                modifier = Modifier.padding(start = 32.dp, end = 32.dp, bottom = 32.dp)
-            ) {
-                Card(
-                    modifier = Modifier.fillMaxWidth(),
-                    elevation = 8.dp,
-                    shape = RoundedCornerShape(10.dp)
+            if (isMain) {
+                Row(
+                    modifier = Modifier.padding(start = 32.dp, end = 32.dp, bottom = 32.dp)
                 ) {
-                    Row(
-                        horizontalArrangement = Arrangement.SpaceBetween,
-                        verticalAlignment = Alignment.CenterVertically
+                    Card(
+                        modifier = Modifier.fillMaxWidth(),
+                        elevation = 8.dp,
+                        shape = RoundedCornerShape(10.dp)
                     ) {
-                        Text(modifier = Modifier.padding(8.dp), text = "Search")
-                        Box(
-                            modifier = Modifier
-                                .background(
-                                    color = accentBlue,
-                                    shape = RoundedCornerShape(10.dp)
-                                )
-                                .size(40.dp),
+                        Row(
+                            horizontalArrangement = Arrangement.SpaceBetween,
+                            verticalAlignment = Alignment.CenterVertically
                         ) {
-                            Image(
-                                painter = painterResource(R.drawable.ic_search),
-                                contentDescription = "Search Icon",
-                                colorFilter = ColorFilter.tint(color = Color.White),
-                                contentScale = ContentScale.Inside,
-                                modifier = Modifier.size(40.dp)
-                            )
+                            Text(modifier = Modifier.padding(8.dp), text = "Search")
+                            Box(
+                                modifier = Modifier
+                                    .background(
+                                        color = accentBlue,
+                                        shape = RoundedCornerShape(10.dp)
+                                    )
+                                    .size(40.dp),
+                            ) {
+                                Image(
+                                    painter = painterResource(R.drawable.ic_search),
+                                    contentDescription = "Search Icon",
+                                    colorFilter = ColorFilter.tint(color = Color.White),
+                                    contentScale = ContentScale.Inside,
+                                    modifier = Modifier.size(40.dp)
+                                )
+                            }
                         }
                     }
                 }

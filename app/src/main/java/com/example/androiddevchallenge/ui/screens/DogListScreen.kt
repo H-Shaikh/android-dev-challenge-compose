@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.GridCells
 import androidx.compose.foundation.lazy.LazyVerticalGrid
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -30,8 +31,8 @@ fun DogListScreen(navController: NavHostController) {
                 modifier = Modifier
                     .fillMaxWidth()
             ) {
-                items(dogs) { dog ->
-                    DogListItem(dog, navController)
+                itemsIndexed(dogs) { index, dog ->
+                    DogListItem(dog, navController, index)
                 }
             }
         }

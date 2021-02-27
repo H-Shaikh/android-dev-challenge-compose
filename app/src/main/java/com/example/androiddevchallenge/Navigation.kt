@@ -15,9 +15,10 @@ fun NavGraph() {
             DogListScreen(navController)
         }
 
-        composable("dogDetail") {
+        composable("dogDetail/{index}") {
             DogDetailScreen(
-                navController
+                navController,
+                index = it.arguments?.getString("index")!!
             )
         }
     }

@@ -21,7 +21,7 @@ import com.example.androiddevchallenge.model.Doggo
 import com.example.androiddevchallenge.ui.theme.typography
 
 @Composable
-fun DogListItem(dog: Doggo, navController: NavHostController) {
+fun DogListItem(dog: Doggo, navController: NavHostController, index: Int) {
     Card(
         elevation = 16.dp,
         shape = RoundedCornerShape(32.dp),
@@ -31,7 +31,7 @@ fun DogListItem(dog: Doggo, navController: NavHostController) {
         Column(
             verticalArrangement = Arrangement.spacedBy((-15).dp),
             modifier = Modifier.clickable {
-                navController.navigate("dogDetail") {
+                navController.navigate("dogDetail/$index") {
                     popUpTo(route = "dogList") {}
                 }
             },
