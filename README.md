@@ -2,7 +2,7 @@
 
 <!--- Replace <OWNER> with your Github Username and <REPOSITORY> with the name of your repository. -->
 <!--- You can find both of these in the url bar when you open your repository in github. -->
-![Workflow result](https://github.com/<OWNER>/<REPOSITORY>/workflows/Check/badge.svg)
+![Workflow result](https://github.com/ankurg22/android-dev-challenge-compose/workflows/Check/badge.svg)
 
 
 ## :scroll: Description
@@ -10,6 +10,7 @@ A dog adoption app UI with a list and details screen
 
 
 ## :bulb: Motivation and Context
+The Round UI and ease of building lists. Re-usable Header component
 
 
 ## :camera_flash: Screenshots
